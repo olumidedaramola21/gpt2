@@ -1,0 +1,22 @@
+[project]
+name = "gpt2"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "einops>=0.8.2",
+    "jax>=0.4.30",
+    "jaxlib>0.4.30",
+    "numpy>=1.26",
+    "optax>=0.2.2",
+    "pyyaml>=6.0",
+    "tiktoken>=0.7.0",
+]
+
+[dependency-groups]
+dev = [
+    "black>=26.5.1",
+    "pytest>=8.0",
+    "ruff>=0.16.4",
+]
