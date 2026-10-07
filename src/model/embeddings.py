@@ -1,6 +1,7 @@
 import jax
 import jax.numpy as jnp
 from einops import repeat
+
 from .config import GPT2Config
 
 
@@ -8,8 +9,8 @@ def init_embeddings(rng: jax.Array, config: GPT2Config) -> dict:
 
     wte_key, wpe_key = jax.random.split(rng)
     std = 0.02
-    wte = std * jax.random.normal(wte_key, (config.vocab_size, config.n_embed))
-    wpe = std * jax.random.normal(wpe_key, (config.block_size, config.n_embed))
+    wte = std * jax.random.normal(wte_key, (config.vocab_size, config.n_embd))
+    wpe = std * jax.random.normal(wpe_key, (config.block_size, config.n_embd))
     return {"wte": wte, "wpe": wpe}
 
 

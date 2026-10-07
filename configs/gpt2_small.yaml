@@ -1,0 +1,34 @@
+# Reprodcues the 'GPT-2 small' (124M parameters)
+
+model:
+  vocab_size: 50257
+  block_size: 1024
+  n_layer: 12
+  n_head: 12
+  n_embd: 768
+  dropout: 0.1
+  bias: True
+
+data:
+  tokenizer: gpt2
+  train_bin: data/openwebtext_train.bin
+  val_bin: data/openwebtext_val.bin
+  val_fraction: 0.0005
+
+optim:
+  peak_lr: 6.0e-4
+  min_lr: 6.0e-5
+  warmup_steps: 2000
+  weight_decay: 0.1
+  grad_clip_norm: 1.0
+  b1: 0.9     # how much of gradient direction to remember
+  b2: 0.95    # how much history of gradient magnitude to remember
+
+train: 
+  batch_size: 32
+  total_steps: 600000
+  eval_interval: 1000
+  eval_iters: 200
+  log_interval: 5
+  checkpoint_path: checkpoints/gpt2_small
+  seed: 1337

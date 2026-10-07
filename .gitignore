@@ -10,3 +10,15 @@ wheels/
 .venv
 
 .ruff_cache/
+
+
+
+# Checkpoints & model artifacts
+checkpoints/
+**/checkpoints
+*.ocdbt
+
+# Datasets and processed data
+data/*.bin
+data/*.txt
+data/*.npy

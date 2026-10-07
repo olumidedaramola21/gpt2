@@ -1,0 +1,34 @@
+# Config for verifying the pipeline runs end-to-end on a CPU 
+
+model:
+  vocab_size: 256
+  block_size: 64
+  n_layer: 2
+  n_head: 2
+  n_embd: 64
+  dropout: 0.1
+  bias: True
+
+data:
+  tokenizer: byte
+  train_bin: data/debug_train.bin
+  val_bin: data/debug_val.bin
+  val_fraction: 0.1
+
+optim:
+  peak_lr: 3.0e-4
+  min_lr: 3.0e-5
+  warmup_steps: 20
+  weight_decay: 0.1
+  grad_clip_norm: 1.0
+  b1: 0.9
+  b2: 0.95
+
+train: 
+  batch_size: 4
+  total_steps: 100
+  eval_interval: 25
+  eval_iters: 5
+  log_interval: 10
+  checkpoint_path: checkpoints/debug
+  seed: 0

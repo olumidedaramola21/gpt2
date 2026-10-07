@@ -10,8 +10,10 @@ dependencies = [
     "jaxlib>0.4.30",
     "numpy>=1.26",
     "optax>=0.2.2",
+    "orbax-checkpoint>=0.12.4",
     "pyyaml>=6.0",
     "tiktoken>=0.7.0",
+    "wandb>=0.30.0",
 ]
 
 [dependency-groups]
